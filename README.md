@@ -16,13 +16,13 @@
 ### Association
 
 - has_many :items
-- has_one  :buy
+- has_many  :buys
 
 ## items テーブル
 
 | Column      | Type       | Options                        |
 | ---------   | ---------  | ------------------------------ |
-| item_name   | string     | null: false                    |
+| name        | string     | null: false                    |
 | describe    | text       | null: false                    |
 | category_id | integer    | null: false                    |
 | condition_id| integer    | null: false                    |
