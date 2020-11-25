@@ -4,7 +4,6 @@
 
 | Column   | Type   | Options     |
 | -------- | ------ | ----------- |
-| name     | string | null: false |
 | email    | string | null: false |
 | password | string | null: false |
 
@@ -15,13 +14,18 @@
 
 ## items テーブル
 
-| Column   | Type       | Options     |
-| -------- | -------    | ----------- |
-| name     | string     | null: false |
-| category | string     | null: false |
-| price    | integer    | null: false |
-| text     | text       | null: false |
-| user_id  | references |             |
+| Column    | Type       | Options                        |
+| --------- | ---------  | ------------------------------ |
+| image     | references | null: false                    |
+| item      | string     | null: false                    |
+| describe  | text       | null: false                    |
+| category  | string     | null: false                    |
+| condition | string     | null: false                    |
+| fee       | integer    | null: false                    |
+| area      | string     | null: false                    |
+| day       | integer    | null: false                    |
+| payment   | integer    | null: false                    |
+| user      | references | null: false, foreign_key: true | 
 
 ### Association
 
@@ -32,7 +36,8 @@
 
 | Column  | Type       | Options                        |
 | ------- | ---------- | ------------------------------ |
-| user_id | references | null: false, foreign_key: true |
+| user    | references | null: false, foreign_key: true |
+| item    | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -42,9 +47,13 @@
 
 ## receiver テーブル
 
-| Column  | Type       | Options                        |
-| ------- | ---------- | ------------------------------ |
-| address | string     | null: false                    |
+| Column      | Type       | Options                        |
+| ----------- | ---------- | ------------------------------ |
+| posta       | integer    | null: false                    |
+| prefectures | string     | null: false                    |
+| city        | string     | null: false                    |
+| banchi      | string     | null: false                    |
+| building    | string     | null: false                    |
 
 ### Association
 
