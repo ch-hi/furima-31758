@@ -1,6 +1,6 @@
-<mxfile host="65bd71144e" modified="2020-11-25T08:41:04.970Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.51.1 Chrome/83.0.4103.122 Electron/9.3.3 Safari/537.36" etag="w77sGRxawhzefHCQGyv1" version="13.6.5">
+<mxfile host="65bd71144e" modified="2020-11-25T10:28:44.818Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.51.1 Chrome/83.0.4103.122 Electron/9.3.3 Safari/537.36" etag="sGdG9hZLvtH8Pa1CJnpg" version="13.6.5">
     <diagram id="_38yk7pe4bkobA6m-KNn" name="ページ1">
-        <mxGraphModel dx="621" dy="582" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="569" dy="582" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -19,7 +19,7 @@
                 <mxCell id="22" value="receiver" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
                     <mxGeometry x="400" y="280" width="160" height="140" as="geometry"/>
                 </mxCell>
-                <mxCell id="23" value="posta&#10;prefectures&#10;city&#10;banchi&#10;building&#10;buy" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="22" vertex="1">
+                <mxCell id="23" value="posta&#10;area&#10;city&#10;banchi&#10;building&#10;buy" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="22" vertex="1">
                     <mxGeometry y="30" width="160" height="110" as="geometry"/>
                 </mxCell>
                 <mxCell id="3" value="users" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
@@ -34,7 +34,7 @@
                 <mxCell id="41" value="items" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" parent="47" vertex="1">
                     <mxGeometry width="220" height="160" as="geometry"/>
                 </mxCell>
-                <mxCell id="58" value="&lt;blockquote style=&quot;margin: 0 0 0 40px ; border: none ; padding: 0px&quot;&gt;&lt;/blockquote&gt;&lt;blockquote style=&quot;margin: 0 0 0 40px ; border: none ; padding: 0px&quot;&gt;&lt;div style=&quot;line-height: 18px&quot;&gt;item_name&lt;/div&gt;&lt;span&gt;describe&lt;br&gt;&lt;/span&gt;&lt;span&gt;category&lt;br&gt;&lt;/span&gt;&lt;span&gt;condition&lt;br&gt;&lt;/span&gt;&lt;span&gt;fee&lt;br&gt;&lt;/span&gt;&lt;span&gt;area&lt;br&gt;&lt;/span&gt;&lt;span&gt;day&lt;br&gt;&lt;/span&gt;&lt;span&gt;payment&lt;br&gt;&lt;/span&gt;&lt;span&gt;user&lt;/span&gt;&lt;/blockquote&gt;&lt;blockquote style=&quot;margin: 0 0 0 40px ; border: none ; padding: 0px&quot;&gt;&lt;/blockquote&gt;&lt;blockquote style=&quot;margin: 0 0 0 40px ; border: none ; padding: 0px&quot;&gt;&lt;/blockquote&gt;&lt;blockquote style=&quot;margin: 0 0 0 40px ; border: none ; padding: 0px&quot;&gt;&lt;/blockquote&gt;&lt;blockquote style=&quot;margin: 0 0 0 40px ; border: none ; padding: 0px&quot;&gt;&lt;/blockquote&gt;&lt;blockquote style=&quot;margin: 0 0 0 40px ; border: none ; padding: 0px&quot;&gt;&lt;/blockquote&gt;&lt;blockquote style=&quot;margin: 0 0 0 40px ; border: none ; padding: 0px&quot;&gt;&lt;/blockquote&gt;&lt;blockquote style=&quot;margin: 0 0 0 40px ; border: none ; padding: 0px&quot;&gt;&lt;/blockquote&gt;&lt;blockquote style=&quot;margin: 0 0 0 40px ; border: none ; padding: 0px&quot;&gt;&lt;/blockquote&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="41">
+                <mxCell id="58" value="&lt;blockquote style=&quot;margin: 0 0 0 40px ; border: none ; padding: 0px&quot;&gt;&lt;/blockquote&gt;&lt;blockquote style=&quot;margin: 0 0 0 40px ; border: none ; padding: 0px&quot;&gt;&lt;div style=&quot;line-height: 18px&quot;&gt;item_name&lt;/div&gt;&lt;span&gt;describe&lt;br&gt;&lt;/span&gt;&lt;span&gt;category&lt;br&gt;&lt;/span&gt;&lt;span&gt;condition&lt;br&gt;&lt;/span&gt;&lt;span&gt;fee&lt;br&gt;&lt;/span&gt;&lt;span&gt;area&lt;br&gt;&lt;/span&gt;&lt;span&gt;day&lt;br&gt;&lt;/span&gt;&lt;span&gt;payment&lt;br&gt;&lt;/span&gt;&lt;span&gt;user&lt;/span&gt;&lt;/blockquote&gt;&lt;blockquote style=&quot;margin: 0 0 0 40px ; border: none ; padding: 0px&quot;&gt;&lt;/blockquote&gt;&lt;blockquote style=&quot;margin: 0 0 0 40px ; border: none ; padding: 0px&quot;&gt;&lt;/blockquote&gt;&lt;blockquote style=&quot;margin: 0 0 0 40px ; border: none ; padding: 0px&quot;&gt;&lt;/blockquote&gt;&lt;blockquote style=&quot;margin: 0 0 0 40px ; border: none ; padding: 0px&quot;&gt;&lt;/blockquote&gt;&lt;blockquote style=&quot;margin: 0 0 0 40px ; border: none ; padding: 0px&quot;&gt;&lt;/blockquote&gt;&lt;blockquote style=&quot;margin: 0 0 0 40px ; border: none ; padding: 0px&quot;&gt;&lt;/blockquote&gt;&lt;blockquote style=&quot;margin: 0 0 0 40px ; border: none ; padding: 0px&quot;&gt;&lt;/blockquote&gt;&lt;blockquote style=&quot;margin: 0 0 0 40px ; border: none ; padding: 0px&quot;&gt;&lt;/blockquote&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="41" vertex="1">
                     <mxGeometry y="26" width="220" height="134" as="geometry"/>
                 </mxCell>
                 <mxCell id="51" value="" style="endArrow=classic;html=1;entryX=-0.005;entryY=0.867;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" edge="1">
@@ -49,13 +49,13 @@
                         <mxPoint x="180" y="192" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="53" value="" style="endArrow=classic;html=1;entryX=-0.014;entryY=1.03;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1.013;exitY=0.058;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="20" edge="1" target="58">
+                <mxCell id="53" value="" style="endArrow=classic;html=1;entryX=-0.014;entryY=1.03;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1.013;exitY=0.058;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="20" target="58" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="252.1" y="226" as="sourcePoint"/>
                         <mxPoint x="380" y="226.01" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="54" value="" style="endArrow=classic;html=1;entryX=1.031;entryY=0.411;entryDx=0;entryDy=0;entryPerimeter=0;exitX=-0.019;exitY=0.344;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="23" edge="1" target="21">
+                <mxCell id="54" value="" style="endArrow=classic;html=1;entryX=1.031;entryY=0.411;entryDx=0;entryDy=0;entryPerimeter=0;exitX=-0.019;exitY=0.344;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="23" target="21" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="388.9" y="339.51" as="sourcePoint"/>
                         <mxPoint x="261" y="339.5" as="targetPoint"/>
