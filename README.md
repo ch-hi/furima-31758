@@ -20,17 +20,17 @@
 
 ## items テーブル
 
-| Column    | Type       | Options                        |
-| --------- | ---------  | ------------------------------ |
-| item_name | string     | null: false                    |
-| describe  | text       | null: false                    |
-| category  | string     | null: false                    |
-| condition | string     | null: false                    |
-| fee       | integer    | null: false                    |
-| area      | string     | null: false                    |
-| day       | integer    | null: false                    |
-| payment   | integer    | null: false                    |
-| user      | references | null: false, foreign_key: true | 
+| Column      | Type       | Options                        |
+| ---------   | ---------  | ------------------------------ |
+| item_name   | string     | null: false                    |
+| describe    | text       | null: false                    |
+| category_id | integer    | null: false                    |
+| condition   | string     | null: false                    |
+| fee         | integer    | null: false                    |
+| area        | string     | null: false                    |
+| day         | integer    | null: false                    |
+| payment     | integer    | null: false                    |
+| user        | references | null: false, foreign_key: true | 
 <!-- Column:userはマイグレーションファイルと合わせるためにこちらの記述に統一します。_idとintegerでも使えるのですが、エラー回避や分かりやすさ重視であえてこの書き方でOKである旨メンターさん確認も済んでおります -->
 
 ### Association
@@ -48,21 +48,21 @@
 ### Association
 
 - belongs_to :user
-- belongs_to :items
+- belongs_to :item
 - has_one  :receiver
 
 
 
 ## receiver テーブル
 
-| Column      | Type       | Options                        |
-| ----------- | ---------- | ------------------------------ |
-| posta       | string     | null: false                    |
-| prefectures | integer    | null: false                    |
-| city        | string     | null: false                    |
-| banchi      | string     | null: false                    |
-| building    | string     |                                |
-| buy         | references | null: false, foreign_key: true |
+| Column        | Type       | Options                        |
+| -----------   | ---------- | ------------------------------ |
+| posta         | string     | null: false                    |
+| prefecture_id | integer    | null: false                    |
+| city          | string     | null: false                    |
+| banchi        | string     | null: false                    |
+| building      | string     |                                |
+| buy           | references | null: false, foreign_key: true |
 
 ### Association
 
