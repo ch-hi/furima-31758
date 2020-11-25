@@ -61,7 +61,7 @@
 | prefectures | integer    | null: false                    |
 | city        | string     | null: false                    |
 | banchi      | string     | null: false                    |
-| building    | string     | null: false                    |
+| building    | string     |                                |
 | buy         | references | null: false, foreign_key: true |
 
 ### Association
