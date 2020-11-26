@@ -4,10 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
-  #バリデーション 冗長ではないか？レビュー時に確認
+  #まとめ記法あり参照：https://master.tech-camp.in/curriculums/5389
   validates :encrypted_password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i }   #半角英数必須
   validates :familyname, :firstname, :familykana,:firstkana,:birth, presence: true        
-  validates :familyname, :firstname, format: { with: /\A[ぁ-んァ-ヶ一-龥]/+\z }             #全角（漢字・ひらがな・カタカナ）必須
-  validates :familykana, :firstkana, format: { with: /\p{katakana}/  /\A[ァ-ヶー－]+\z/ }  #全角（カタカナ）必須
+  validates :familyname, :firstname, format: { with: /\A[ぁ-んァ-ン一-龥]/ }             #全角（漢字・ひらがな・カタカナ）での入力が必須であること
+  validates :familykana, :firstkana, format: { with: /\p{katakana}/ }  #全角（カタカナ）必須
 
 end
