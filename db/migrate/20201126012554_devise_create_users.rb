@@ -7,6 +7,14 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
 
+      #usersテーブルのカラム
+      t.string :nickname,   null: false
+      t.string :familyname, null: false
+      t.string :firstname,  null: false
+      t.string :familykana, null: false
+      t.string :firstkana,  null: false
+      t.date   :birth,      null: false
+
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at
