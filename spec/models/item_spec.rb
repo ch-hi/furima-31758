@@ -24,32 +24,32 @@ RSpec.describe Item, type: :model do
             expect(@item.errors.full_messages).to include("Describe can't be blank")
           end
 
-          it "カテゴリーが空だと場合登録できない" do
-            @item.category_id = nil
+          it "category_idは1だと登録できない" do
+            @item.category_id = 1
             @item.valid?
             expect(@item.errors.full_messages).to include("Category is not a number")
           end
 
-          it "商品の状態についての情報が空だと場合登録できない" do
-            @item.condition_id = nil
+          it "condition_idは1だと登録できない" do
+            @item.condition_id = 1
             @item.valid?
             expect(@item.errors.full_messages).to include("Condition is not a number")
           end
 
-          it "配送料の負担についての情報が空だと場合登録できない" do
-            @item.fee_id = nil
+          it "fee_idは1だと登録できない" do
+            @item.fee_id = 1
             @item.valid?
             expect(@item.errors.full_messages).to include("Fee is not a number")
           end
 
-          it "発送元の地域についての情報が空だと場合登録できない" do
-            @item.area_id = nil
+          it "area_idは1だと登録できない" do
+            @item.area_id = 1
             @item.valid?
             expect(@item.errors.full_messages).to include("Area is not a number")
           end
 
-          it "発送までの日数についての情報が空だと場合登録できない" do
-            @item.day_id = nil
+          it "day_idは1だと登録できない" do
+            @item.day_id = 1
             @item.valid?
             expect(@item.errors.full_messages).to include("Day is not a number")
           end
@@ -60,7 +60,6 @@ RSpec.describe Item, type: :model do
             expect(@item.errors.full_messages).to include("Payment can't be blank")
           end      
 
-          # 不明箇所
           it "価格が、¥300以上であること" do
             @item.payment = "299"
             @item.valid?
