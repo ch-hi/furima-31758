@@ -9,7 +9,7 @@ RSpec.describe Item, type: :model do
           it "商品画像が空では登録できない" do
             @item.image = nil
             @item.valid?
-            expect(@item.errors.full_messages).to include("Payment is not a number")
+            expect(@item.errors.full_messages).to include("Image can't be blank")
           end
 
           it "商品名が空だと登録できないこと" do
@@ -27,31 +27,31 @@ RSpec.describe Item, type: :model do
           it "category_idは1だと登録できない" do
             @item.category_id = 1
             @item.valid?
-            expect(@item.errors.full_messages).to include("Category is not a number")
+            expect(@item.errors.full_messages).to include("Category must be other than 1")
           end
 
           it "condition_idは1だと登録できない" do
             @item.condition_id = 1
             @item.valid?
-            expect(@item.errors.full_messages).to include("Condition is not a number")
+            expect(@item.errors.full_messages).to include("Condition must be other than 1")
           end
 
           it "fee_idは1だと登録できない" do
             @item.fee_id = 1
             @item.valid?
-            expect(@item.errors.full_messages).to include("Fee is not a number")
+            expect(@item.errors.full_messages).to include("Fee must be other than 1")
           end
 
           it "area_idは1だと登録できない" do
             @item.area_id = 1
             @item.valid?
-            expect(@item.errors.full_messages).to include("Area is not a number")
+            expect(@item.errors.full_messages).to include("Area must be other than 1")
           end
 
           it "day_idは1だと登録できない" do
             @item.day_id = 1
             @item.valid?
-            expect(@item.errors.full_messages).to include("Day is not a number")
+            expect(@item.errors.full_messages).to include("Day must be other than 1")
           end
 
           it "価格についての情報が空だと場合登録できない" do
