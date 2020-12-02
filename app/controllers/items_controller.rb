@@ -3,7 +3,6 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.order("created_at DESC") #並び替え
-    @items = Item.all
   end
 
   def new
