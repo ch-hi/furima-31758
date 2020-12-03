@@ -40,6 +40,12 @@ class ItemsController < ApplicationController
 
   def destroy
      @item.destroy
+     if @item.destroy
+      redirect_to root_path
+    else
+      render :destroy
+     end
+     
   end
   
   private
