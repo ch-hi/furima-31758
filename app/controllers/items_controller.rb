@@ -1,12 +1,12 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_item, only: [:show, :edit, :update]
 
   def index
     @items = Item.order("created_at DESC") #並び替え
   end
 
   def new
-    @item = Item.new
   end
 
   def create
@@ -19,12 +19,10 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
   end
 
   def edit
     # ログインユーザーが出品者じゃない
-    @item = Item.find(params[:id])
     unless user_signed_in? && current_user.id == @item.user_id
     redirect_to root_path
     end
@@ -44,6 +42,10 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:image,:name,:describe,:payment,:category_id,:condition_id,:fee_id,:area_id,:day_id).merge(user_id: current_user.id)
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 
   def redirect_root
