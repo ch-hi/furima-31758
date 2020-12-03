@@ -23,15 +23,14 @@ class ItemsController < ApplicationController
 
   def edit
     # ログインユーザーが出品者じゃない
-    unless user_signed_in? && current_user.id == @item.user_id
+    unless current_user.id == @item.user_id
     redirect_to root_path
     end
 
   end
 
   def update
-    @item = Item.find(params[:id])
-      if @item.update(item_params)
+    if @item.update(item_params)
       redirect_to item_path(@item)
     else
       render :edit
@@ -48,7 +47,4 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
-  def redirect_root
-    redirect_to root_path unless user_signed_in?
-  end
 end
