@@ -23,7 +23,12 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    # ログインユーザーが出品者じゃない
     @item = Item.find(params[:id])
+    unless user_signed_in? && current_user.id == @item.user_id
+    redirect_to root_path
+    end
+
   end
 
   def update
@@ -39,5 +44,9 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:image,:name,:describe,:payment,:category_id,:condition_id,:fee_id,:area_id,:day_id).merge(user_id: current_user.id)
-  end  
+  end
+
+  def redirect_root
+    redirect_to root_path unless user_signed_in?
+  end
 end
