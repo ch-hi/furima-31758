@@ -1,12 +1,13 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_item, only: [:show, :edit, :update]
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
     @items = Item.order("created_at DESC") #並び替え
   end
 
   def new
+    @item = Item.new
   end
 
   def create
@@ -23,10 +24,7 @@ class ItemsController < ApplicationController
 
   def edit
     # ログインユーザーが出品者じゃない
-    unless current_user.id == @item.user_id
-    redirect_to root_path
-    end
-
+    redirect_to root_path unless current_user.id == @item.user_id
   end
 
   def update
@@ -35,6 +33,11 @@ class ItemsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @item.destroy if current_user.id == @item.user_id
+    redirect_to root_path
   end
   
   private
@@ -48,5 +51,3 @@ class ItemsController < ApplicationController
   end
   
 end
-
-#ダミー
