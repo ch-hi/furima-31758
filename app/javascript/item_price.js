@@ -21,9 +21,12 @@ const pay = () => {
         const renderDom = document.getElementById("charge-form");
         const tokenObj = `<input value=${token} name='token' type="hidden"> `;
         renderDom.insertAdjacentHTML("beforeend", tokenObj);
-        debugger;
-
+        // debugger;
       }
+      document.getElementById("buy_number").removeAttribute("name");
+      document.getElementById("buy_cvc").removeAttribute("name");
+      document.getElementById("buy_exp_month").removeAttribute("name");
+      document.getElementById("buy_exp_year").removeAttribute("name");
     });
   });
 };
