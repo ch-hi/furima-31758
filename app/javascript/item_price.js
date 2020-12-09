@@ -2,7 +2,16 @@ const pay = () => {
   const form = document.getElementById("charge-form");
   form.addEventListener("submit", (e) => {
     e.preventDefault();
-    console.log("フォーム送信時にイベント発火")
+    
+    const formResult = document.getElementById("charge-form");
+    const formData = new FormData(formResult);
+
+    const card = {
+      number: formData.get("buy[number]"),
+      cvc: formData.get("buy[cvc]"),
+      exp_month: formData.get("buy[exp_month]"),
+      exp_year: `20${formData.get("buy[exp_year]")}`,
+    };
   });
 };
 
