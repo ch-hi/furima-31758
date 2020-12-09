@@ -27,6 +27,8 @@ const pay = () => {
       document.getElementById("buy_cvc").removeAttribute("name");
       document.getElementById("buy_exp_month").removeAttribute("name");
       document.getElementById("buy_exp_year").removeAttribute("name");
+    
+      document.getElementById("charge-form").submit();
     });
   });
 };
