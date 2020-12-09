@@ -13,6 +13,12 @@ class BuysController < ApplicationController
     @buy_form = BuyForm.new(buy_params)   #「BuyForm」に編集
     # binding.pry
      if @buy_form.valid?
+      Payjp.api_key = "sk_test_***********"  # 自身のPAY.JPテスト秘密鍵を記述しましょう
+      Payjp::Charge.create(
+        amount: buy_params[:price],  # 商品の値段
+        card: buy_params[:token],    # カードトークン
+        currency: 'jpy'                 # 通貨の種類（日本円）
+      )
        @buy_form.save
        redirect_to root_path
      else
