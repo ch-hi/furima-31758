@@ -5,6 +5,7 @@ class BuyForm
 
   #カード情報のバリデーション未実装 token入る
   validates :price, presence: true
+  validates :token, presence: true
   
   validates :posta, :area, :city, :banchi, :phonenumber, presence: true
   #郵便番号にはハイフンが必要であること（123-4567となる）
