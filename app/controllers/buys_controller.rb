@@ -7,6 +7,7 @@ class BuysController < ApplicationController
 
  
   def create
+    binding.pry
     @item = Item.find(params[:item_id])
     # binding.pry(params no nakami) => token ga haitteiru => ok
     @buy_form = BuyForm.new(buy_params)   #「BuyForm」に編集
