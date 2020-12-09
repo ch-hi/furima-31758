@@ -1,10 +1,10 @@
 class BuyForm
 
   include ActiveModel::Model
-  attr_accessor :user_id, :item_id, :posta, :area, :city, :banchi, :building, :phonenumber, :buy_id
+  attr_accessor :user_id, :item_id, :posta, :area, :city, :banchi, :building, :phonenumber, :buy_id, :token
 
   #カード情報のバリデーション未実装 token入る
-
+  validates :price, presence: true
   
   validates :posta, :area, :city, :banchi, :phonenumber, presence: true
   #郵便番号にはハイフンが必要であること（123-4567となる）
