@@ -7,8 +7,10 @@ class BuysController < ApplicationController
 
  
   def create
+    
     # binding.pry
     @item = Item.find(params[:item_id])
+    # binding.pry
     # binding.pry(params no nakami) => token ga haitteiru => ok
     @buy_form = BuyForm.new(buy_params)   #「BuyForm」に編集
     # binding.pry
@@ -23,13 +25,14 @@ class BuysController < ApplicationController
  
   private
   def buy_params
-   params.permit(:item_id,:posta, :area, :city, :banchi, :building, :phonenumber, :price).merge(user_id: current_user.id,token: params[:token])
+   params.require(:buy_form).permit(:posta, :area, :city, :banchi, :building, :phonenumber, :price).merge(user_id: current_user.id,token: params[:token],item_id: params[:item_id])
   end
 
   def pay_item
-    Payjp.api_key = "sk_test_***********"  # 自身のPAY.JPテスト秘密鍵を記述しましょう
+    # Payjp.api_key = "pk_test_cf3a19d0219f760b8bce012c"  # 自身のPAY.JPテスト秘密鍵を記述しましょう
+    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
     Payjp::Charge.create(
-        amount: buy_params[:price],  # 商品の値段
+        amount: @item.payment,  # 商品の値段
         card: buy_params[:token],    # カードトークン
         currency: 'jpy'                 # 通貨の種類（日本円）
       )
