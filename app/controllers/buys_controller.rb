@@ -5,8 +5,7 @@ class BuysController < ApplicationController
 
   def index
     @buy_form = BuyForm.new
-    # binding.pry
-    if @item.user_id == current_user.id || @item.buy != nil
+        if @item.user_id == current_user.id || @item.buy != nil
        redirect_to root_path
     end
   end
