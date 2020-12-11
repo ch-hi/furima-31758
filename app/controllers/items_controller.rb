@@ -4,6 +4,9 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.order("created_at DESC") #並び替え
+    # unless user_signed_in?
+    #   redirect_to action: :index
+    # end
   end
 
   def new

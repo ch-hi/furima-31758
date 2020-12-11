@@ -3,7 +3,9 @@ require 'rails_helper'
 RSpec.describe BuyForm, type: :model do
   describe '購入情報の保存' do
     before do
-      @buy_form = FactoryBot.build(:buy_form)
+      user = FactoryBot.create(:user)
+      item = FactoryBot.create(:item)
+      @buy_form = FactoryBot.build(:buy_form, user_id: user.id, item_id: item.id)
     end
 
     it 'すべての値が正しく入力されていれば保存できること' do
@@ -53,6 +55,18 @@ RSpec.describe BuyForm, type: :model do
     #電話番号
     it "phonenumberが12桁以上であれば登録できないこと" do
       @buy_form.phonenumber = "123454567890123"
+      @buy_form.valid?
+      expect(@buy_form.errors.full_messages).to include("Phonenumber is invalid")
+    end
+
+    it "areaは1だと登録できない" do
+      @buy_form.area = 1
+      @buy_form.valid?
+      expect(@buy_form.errors.full_messages).to include("Area must be other than 1")
+    end
+
+    it "phonenumberは数字のみでは登録できないこと" do
+      @buy_form.phonenumber = "123-5678-90"
       @buy_form.valid?
       expect(@buy_form.errors.full_messages).to include("Phonenumber is invalid")
     end
