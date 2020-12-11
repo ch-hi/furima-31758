@@ -1,0 +1,6 @@
+class Buy < ApplicationRecord
+  belongs_to :item
+  has_one :receiver
+  
+end
+

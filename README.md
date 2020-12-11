@@ -58,7 +58,7 @@
 | Column        | Type       | Options                        |
 | -----------   | ---------- | ------------------------------ |
 | posta         | string     | null: false                    |
-| area_id       | integer    | null: false                    |
+| area          | integer    | null: false                    |
 | city          | string     | null: false                    |
 | banchi        | string     | null: false                    |
 | building      | string     |                                |
