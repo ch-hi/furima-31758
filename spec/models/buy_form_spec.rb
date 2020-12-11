@@ -14,75 +14,75 @@ RSpec.describe BuyForm, type: :model do
       end
     end
 
-    context 'エラー発生時'
-    #空だと〜〜できない
-    it 'user_idが空だと保存できないこと' do
-      @buy_form.user_id = nil
-      @buy_form.valid?
-      expect(@buy_form.errors.full_messages).to include("User can't be blank")
-    end
-    it 'item_idが空だと保存できないこと' do
-      @buy_form.item_id = nil
-      @buy_form.valid?
-      expect(@buy_form.errors.full_messages).to include("Item can't be blank")
-    end
-    it 'tokenが空だと保存できないこと' do
-      @buy_form.token = nil
-      @buy_form.valid?
-      expect(@buy_form.errors.full_messages).to include("Token can't be blank")
-    end
-    it 'postaが空だと保存できないこと' do
-      @buy_form.posta= nil
-      @buy_form.valid?
-      expect(@buy_form.errors.full_messages).to include("Posta can't be blank")
-    end
-    it 'areaが空だと保存できないこと' do
-      @buy_form.area = nil
-      @buy_form.valid?
-      expect(@buy_form.errors.full_messages).to include("Area can't be blank")
-    end   
-    it 'cityが空だと保存できないこと' do
-      @buy_form.city = nil
-      @buy_form.valid?
-      expect(@buy_form.errors.full_messages).to include("City can't be blank")
-    end    
-    it 'banchiが空だと保存できないこと' do
-      @buy_form.banchi = nil
-      @buy_form.valid?
-      expect(@buy_form.errors.full_messages).to include("Banchi can't be blank")
-    end    
-    it 'phonenumberが空だと保存できないこと' do
-      @buy_form.phonenumber = nil
-      @buy_form.valid?
-      expect(@buy_form.errors.full_messages).to include("Phonenumber can't be blank")
-    end
+    context 'エラー発生時' do
+      #空だと〜〜できない
+      it 'user_idが空だと保存できないこと' do
+        @buy_form.user_id = nil
+        @buy_form.valid?
+        expect(@buy_form.errors.full_messages).to include("User can't be blank")
+      end
+      it 'item_idが空だと保存できないこと' do
+        @buy_form.item_id = nil
+        @buy_form.valid?
+        expect(@buy_form.errors.full_messages).to include("Item can't be blank")
+      end
+      it 'tokenが空だと保存できないこと' do
+        @buy_form.token = nil
+        @buy_form.valid?
+        expect(@buy_form.errors.full_messages).to include("Token can't be blank")
+      end
+      it 'postaが空だと保存できないこと' do
+        @buy_form.posta= nil
+        @buy_form.valid?
+        expect(@buy_form.errors.full_messages).to include("Posta can't be blank")
+      end
+      it 'areaが空だと保存できないこと' do
+        @buy_form.area = nil
+        @buy_form.valid?
+        expect(@buy_form.errors.full_messages).to include("Area can't be blank")
+      end   
+      it 'cityが空だと保存できないこと' do
+        @buy_form.city = nil
+        @buy_form.valid?
+        expect(@buy_form.errors.full_messages).to include("City can't be blank")
+      end    
+      it 'banchiが空だと保存できないこと' do
+        @buy_form.banchi = nil
+        @buy_form.valid?
+        expect(@buy_form.errors.full_messages).to include("Banchi can't be blank")
+      end    
+      it 'phonenumberが空だと保存できないこと' do
+        @buy_form.phonenumber = nil
+        @buy_form.valid?
+        expect(@buy_form.errors.full_messages).to include("Phonenumber can't be blank")
+      end
 
 
-    #郵便番号
-    it 'postaが半角のハイフンを含んだ正しい形式でないと保存できないこと' do
-      @buy_form.posta = '1234567'
-      @buy_form.valid?
-      expect(@buy_form.errors.full_messages).to include("Posta is invalid")
-    end
-    
-    #電話番号
-    it "phonenumberが12桁以上であれば登録できないこと" do
-      @buy_form.phonenumber = "123454567890123"
-      @buy_form.valid?
-      expect(@buy_form.errors.full_messages).to include("Phonenumber is invalid")
-    end
+      #郵便番号
+      it 'postaが半角のハイフンを含んだ正しい形式でないと保存できないこと' do
+        @buy_form.posta = '1234567'
+        @buy_form.valid?
+        expect(@buy_form.errors.full_messages).to include("Posta is invalid")
+      end
+      
+      #電話番号
+      it "phonenumberが12桁以上であれば登録できないこと" do
+        @buy_form.phonenumber = "123454567890123"
+        @buy_form.valid?
+        expect(@buy_form.errors.full_messages).to include("Phonenumber is invalid")
+      end
 
-    it "areaは1だと登録できない" do
-      @buy_form.area = 1
-      @buy_form.valid?
-      expect(@buy_form.errors.full_messages).to include("Area must be other than 1")
-    end
+      it "areaは1だと登録できない" do
+        @buy_form.area = 1
+        @buy_form.valid?
+        expect(@buy_form.errors.full_messages).to include("Area must be other than 1")
+      end
 
-    it "phonenumberは数字のみでは登録できないこと" do
-      @buy_form.phonenumber = "123-5678-90"
-      @buy_form.valid?
-      expect(@buy_form.errors.full_messages).to include("Phonenumber is invalid")
+      it "phonenumberは数字のみでは登録できないこと" do
+        @buy_form.phonenumber = "123-5678-90"
+        @buy_form.valid?
+        expect(@buy_form.errors.full_messages).to include("Phonenumber is invalid")
+      end
     end
-
   end
 end
